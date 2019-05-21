@@ -451,7 +451,7 @@ public class CouponsDao implements ICouponsDao {
 
 		try {
 			connection = JdbcUtils.getConnection();
-			String sqlStatement = "SELECT * FROM coupons WHERE company_id=?, coupon_title=?";
+			String sqlStatement = "SELECT * FROM coupons WHERE company_id=? AND coupon_title=?";
 			preparedStatement = connection.prepareStatement(sqlStatement);
 			preparedStatement.setLong(1, companyId);
 			preparedStatement.setString(2, title);
